@@ -1,6 +1,8 @@
 .postContainer {
     align-items: center;
-    background-color: var(--white);
+    /* background-color: var(--white); */
+    background-color: transparent;
+    border: 2px solid var(--dark-blue);
     display: flex;
     flex-direction: column;
     margin: 20px auto 0;
@@ -12,7 +14,8 @@
 }
 
 .postContainer h4 {
-    color: var(--dark-gray);
+    /* color: var(--dark-gray); */
+    color: var(--white);
     font-size: 24px;
     margin: 10px 0;
     text-align: left;
@@ -20,7 +23,8 @@
 }
 
 .postContainer p {
-    color: var(--dark-gray);
+    /* color: var(--dark-gray); */
+    color: var(--white);
     font-size: 16px;
     margin: 0 0 10px;
     text-align: left;
