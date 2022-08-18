@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import { Link } from "react-router-dom";
 import AddPost from './components/AddPost';
+import Post from './components/Post'
+import PostsList from './components/PostsList';
 
 function App() {
   return (
@@ -16,8 +18,7 @@ function App() {
         <Link to="/">Home</Link> |{" "}
         <Link to="/profile">Profile</Link>
       </nav>
-      <AddPost />
-
+      <PostsList />
     </div>
   );
 }

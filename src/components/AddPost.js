@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './AddPost.css'
 
-const AddPost = () => {
+const AddPost = ({ addNewPost }) => {
     const [title, setTitle] = useState('')
     const [body, setBody] = useState('')
 
@@ -15,6 +15,7 @@ const AddPost = () => {
     // add post to appropriate section
     const handleSubmit = (e) => {
         e.preventDefault()
+        addNewPost(title, body)
         return handleReset(e)
     }
 

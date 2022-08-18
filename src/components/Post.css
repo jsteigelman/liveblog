@@ -1,0 +1,32 @@
+.postContainer {
+    align-items: center;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto 0;
+    padding: 10px;
+    justify-content: center;
+    /* width: 100%;
+    max-width: 800px; */
+
+}
+
+.postContainer h4 {
+    color: var(--dark-gray);
+    font-size: 24px;
+    margin: 10px 0;
+    text-align: left;
+    width: 100%;
+}
+
+.postContainer p {
+    color: var(--dark-gray);
+    font-size: 16px;
+    margin: 0 0 10px;
+    text-align: left;
+    width: 100%;
+}
+
+@media (min-width:600px) {
+
+}

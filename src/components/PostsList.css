@@ -1,0 +1,29 @@
+.postsListContainer {
+    align-items: center;
+    /* background-color: orange; */
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 0;
+    max-width: 800px;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.postsListContainer ul {
+    /* background-color: pink; */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.postsListContainer li {
+    background-color: paleturquoise;
+    margin: 0px;
+    width: 100%;
+}
+
+
+@media (min-width:600px) {
+
+}
