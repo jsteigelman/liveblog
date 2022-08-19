@@ -1,11 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
 import { Link } from "react-router-dom";
-import AddPost from './components/AddPost';
-import Post from './components/Post'
 import PostsList from './components/PostsList';
+import { db } from '../src/firebase'
+import { collection, getDocs } from "firebase/firestore";
+import { useEffect, useState } from 'react';
+import {collectIdsAndDocs} from './util'
 
 function App() {
+  const [posts, setPosts] = useState([])
+
+  useEffect(() => {
+    // get existing posts from firestore database
+    const getData = async () => {
+      const querySnapshot = await getDocs(collection(db, "posts"));
+      const responseContent = querySnapshot.docs.map(collectIdsAndDocs);
+      return setPosts(responseContent)
+    }
+    getData()
+  }, [])
+
   return (
     <div className="App">
       <h1>Live Blog</h1>
@@ -18,7 +31,7 @@ function App() {
         <Link to="/">Home</Link> |{" "}
         <Link to="/about">About</Link>
       </nav>
-      <PostsList />
+      <PostsList existingPosts={posts} />
     </div>
   );
 }

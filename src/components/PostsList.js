@@ -1,13 +1,20 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './PostsList.css'
 import AddPost from './AddPost'
 import Post from './Post'
 
-const PostsList = () => {
+const PostsList = ({ existingPosts }) => {
     const [posts, setPosts] = useState([])
 
-    const listItems = posts.map((post) => <li key={Math.random()}>{post}</li>)
+    // display the existing posts that are saved in the firestore database
+    useEffect(() => {
+        setPosts(existingPosts)
+    })
 
+    // display each post
+    const listItems = existingPosts.length > 0 ? posts.map((post) => <li key={Math.random()}><Post title={post.title} body={post.content} /></li>) : undefined
+
+    // create new post
     const addNewPost = (title, body) => {
         const key = Math.random()
         const newPost = <Post title={title} body={body} key={key} />
